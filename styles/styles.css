@@ -1,0 +1,125 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table{
+    margin: 0px auto;
+    width: 1000px;
+    height: 50vh;
+}
+
+.left-cell{
+    width: 50%;
+    position: relative;
+}
+
+/* Прозрачный фон */
+.left-cell::before{
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url(../resources/background.webp);
+    background-size: 100% 100%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.two-columns-text{
+    z-index: 2;
+    padding: 10px;
+    column-count: 2;
+    column-gap: 50px;
+    column-rule: 2px solid green;
+}
+
+.paragraph-1{
+    color: rgb(24, 24, 107);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+
+.paragraph-2{
+    color: rgb(48, 107, 24);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+}
+
+.paragraph-3{
+    color: rgb(107, 24, 96);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+}
+
+.right-cell{
+    width: 50%;
+}
+
+.right-cell .images{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.right-cell div img{
+    width: 280px;
+    height: 200px;
+}
+
+.right-cell div{
+    position: absolute;
+}
+
+.right-cell-text p{
+    margin: 5px;
+}
+
+/* Размещение картинок одна над другой */
+.img-morning{
+    bottom: 0; right: 0; 
+}
+
+.img-day{
+    bottom: 20%; right: 20%;
+}
+
+.img-evening{
+    bottom: 40%; right: 40%;
+}
+
+.img-evening p{
+    margin: 0;
+}
+
+/* затенение к части текста "природа вечером" */
+.img-evening p span{
+    text-shadow: 2px 2px 2px #666666;
+}
+
+/* затенение к части текста "Картинки природы" */
+.img-text span{ 
+    text-shadow: 2px 2px 2px #666666;
+}
+
+.nature-text{
+    position: absolute;
+    top: 2vh;
+    display: inline-block;
+    animation: nature-text-animation 1s linear 3;
+}
+
+@keyframes nature-text-animation {
+    0% {
+        top: 2vh;
+        transform: rotate(0deg);
+    }
+    50%{
+        top: 95vh;
+        color: greenyellow;
+        opacity: 0.3;
+    }
+    100% {
+        top: 2vh;
+        transform: rotate(360deg);
+    }
+}
